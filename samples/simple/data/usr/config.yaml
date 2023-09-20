@@ -1,0 +1,10 @@
+
+jobs:
+  - name: hello
+    trigger: interval
+    module: test_job
+    module_settings:
+      message: Hello World
+    schedule:
+      seconds: 10
+
