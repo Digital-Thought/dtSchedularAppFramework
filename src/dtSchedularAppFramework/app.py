@@ -22,7 +22,7 @@ class AbstractSchedularApp(AbstractApp):
 
     def load_jobs(self):
         for job in Settings().get('jobs', []):
-            if 'disabled' not in job or job['disabled']:
+            if 'disabled' not in job or not job['disabled']:
                 logging.info(f'Loading Job: {job["name"]}')
                 module = importlib.import_module(job["module"])
                 if 'module_settings' in job:
